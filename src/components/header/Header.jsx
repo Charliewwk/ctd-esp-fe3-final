@@ -69,6 +69,13 @@ const Header = () => {
                 </li>
               </ul>
             </li>
+            <li className="nav-item">
+            <div className="form-check form-switch">
+              <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Light</label>
+              <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+              <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark</label>
+            </div>
+            </li>
           </ul>
         </div>
       </div>
