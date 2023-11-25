@@ -1,28 +1,23 @@
-import SocialIcon from "../social/SocialIcon"
+import { Link } from "react-router-dom";
 import "./footer.css"
 
 const Footer = () => {
   return (
-    <>
-
-      <footer className="footer">
-        <div className="container">
-          <div className="left-content">
-            <span className="text-muted">Powered by</span>
-            {/* <p>{translations.poweredBy}</p> */}
-            <img src="/src/assets/DH.png" alt="DH-logo" />
-          </div>
-          <div className="right-content">
-            <p>Christian Fernández</p>
-            <SocialIcon src="/src/assets/ico-facebook.png" alt="Facebook" />
-            <SocialIcon src="/src/assets/ico-instagram.png" alt="Instagram" />
-            <SocialIcon src="/src/assets/ico-tiktok.png" alt="Tiktok" />
-            <SocialIcon src="/src/assets/ico-whatsapp.png" alt="Whatsapp" />
-          </div>    
-        </div>    
-      </footer>
-    
-    </>
+    <nav className="navFooter navbar fixed-bottom navbar-expand-sm navbar-light bg-light">
+      <div className="container">
+          <ul className="nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">Powered by</li>
+            <li className="nav-item"><img src="/src/assets/DH.png" alt="DH-logo" /></li>
+          </ul>
+          <ul className="nav mb-2 mb-lg-0">
+            <li className="nav-item">Christian Fernández</li>
+            <Link className="nav-item"><img className="social-icon" src="/src/assets/facebook.svg" alt="Facebook" to="#" /></Link>
+            <Link className="nav-item"><img className="social-icon" src="/src/assets/instagram.svg" alt="Instagram" to="#" /></Link>
+            <Link className="nav-item"><img className="social-icon" src="/src/assets/tiktok.svg" alt="Tiktok" to="#" /></Link>
+            <Link className="nav-item"><img className="social-icon" src="/src/assets/whatsapp.svg" alt="Whatsapp" to="#" /></Link>
+          </ul>
+        </div>
+    </nav>
   )
 }
 

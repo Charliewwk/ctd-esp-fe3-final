@@ -2,7 +2,22 @@ import "./favorites.css"
 
 const Favorites = () => {
   return (
+    <>
     <div>Favorites</div>
+    <div>Favorites</div>
+    <div>Favorites</div>
+    <div>Favorites</div>
+    <div>Favorites</div>
+    <div>Favorites</div>
+    <div>Favorites</div>
+    <div>Favorites</div>
+    <div>Favorites</div>
+    <div>Favorites</div>
+    <div>Favorites</div>
+    <div>Favorites</div>
+    <div>Favorites</div>
+    </>
+
   )
 }
 
