@@ -1,5 +1,3 @@
-// LanguageSelector.jsx
-import React from "react";
 import { useGlobal } from "../../context/GlobalContext";
 
 const LanguageSelector = () => {
@@ -11,7 +9,16 @@ const LanguageSelector = () => {
 
   return (
     <div>
-      {/* ... (resto del código) */}
+      <img className="language-icon" src="/src/assets/globe.svg" alt="Language" />
+      <select
+        id="language"
+        value={state.language.language}
+        onChange={(e) => changeLanguage(e.target.value)}
+      >
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="pt">Portuguêse</option>
+      </select>
     </div>
   );
 };

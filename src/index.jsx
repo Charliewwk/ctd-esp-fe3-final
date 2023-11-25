@@ -8,8 +8,6 @@ import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
 import Favorites from "./pages/favorites/Favorites";
 import NoPage from "./pages/noPage/NoPage";
-import LanguageSelector from "./components/languageSelector/LanguageSelector";
-import ThemeSwitch from "./components/themeSwitch/ThemeSwitch";
 
 export default function App() {
   return (
@@ -24,8 +22,6 @@ export default function App() {
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
-        <LanguageSelector />
-        <ThemeSwitch />
       </BrowserRouter>
     </GlobalProvider>
   );

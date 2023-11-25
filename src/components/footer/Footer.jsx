@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
           <ul className="nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">Powered by</li>
-            <li className="nav-item"><img src="/src/assets/DH.png" alt="DH-logo" /></li>
+            <Link className="nav-item"><img src="/src/assets/DH.png" alt="DH-logo" to="#" /></Link>
           </ul>
           <ul className="nav mb-2 mb-lg-0">
             <li className="nav-item">Christian Fernández</li>
