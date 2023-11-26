@@ -1,45 +1,69 @@
-import { createContext, useReducer, useContext } from "react";
+// GlobalContext.jsx
+import { createContext, useReducer, useContext, useEffect } from "react";
 
+// Acciones
+const themeActions = {
+  TOGGLE_THEME: "TOGGLE_THEME",
+};
+
+const favoriteActions = {
+  TOGGLE_FAVORITE: "TOGGLE_FAVORITE",
+  SET_FAVORITES_FROM_LOCAL_STORAGE: "SET_FAVORITES_FROM_LOCAL_STORAGE",
+};
+
+// Reducers
 const themeReducer = (state, action) => {
   switch (action.type) {
-    case "TOGGLE_THEME":
+    case themeActions.TOGGLE_THEME:
       return { ...state, darkMode: !state.darkMode };
     default:
       return state;
   }
 };
 
-const languageReducer = (state, action) => {
+const favoriteReducer = (state, action) => {
   switch (action.type) {
-    case "CHANGE_LANGUAGE":
-      return { ...state, language: action.payload };
+    case favoriteActions.TOGGLE_FAVORITE:
+      const user = action.payload;
+      const favoriteUsers = state || [];
+      const existingIndex = favoriteUsers.findIndex((u) => u.id === user.id);
+      if (existingIndex !== -1) {
+        favoriteUsers.splice(existingIndex, 1);
+      } else {
+        favoriteUsers.push(user);
+      }
+      localStorage.setItem("favoriteUsers", JSON.stringify(favoriteUsers));
+      return [...favoriteUsers];
+    case favoriteActions.SET_FAVORITES_FROM_LOCAL_STORAGE:
+      const storedFavorites = JSON.parse(localStorage.getItem("favoriteUsers"));
+      return storedFavorites || [];
     default:
       return state;
   }
 };
 
-const initialState = {
-  theme: { darkMode: false },
-  language: { language: "en" },
-};
-
-const rootReducer = (state, action) => ({
-  theme: themeReducer(state.theme, action),
-  language: languageReducer(state.language, action),
-});
-
 const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(rootReducer, initialState);
+  const [theme, themeDispatch] = useReducer(themeReducer, { darkMode: false });
+  const [favoriteUsers, favoriteDispatch] = useReducer(favoriteReducer, []);
+
+  useEffect(() => {
+    // Colorear en rojo los botones de favoritos al cargar el home
+    favoriteDispatch({ type: favoriteActions.SET_FAVORITES_FROM_LOCAL_STORAGE });
+  }, []); // Solo se ejecuta al montar el componente
 
   return (
-    <GlobalContext.Provider value={{ state, dispatch }}>
+    <GlobalContext.Provider value={{ theme, themeDispatch, favoriteUsers, favoriteDispatch }}>
       {children}
     </GlobalContext.Provider>
   );
 };
 
 export const useGlobal = () => {
-  return useContext(GlobalContext);
+  const context = useContext(GlobalContext);
+  if (!context) {
+    throw new Error("useGlobal debe ser usado dentro de un GlobalProvider");
+  }
+  return context;
 };

@@ -4,10 +4,8 @@ import "./main.css"
 const Main = () => {
   return (
 
-    <main className="margin-top flex-shrink-0">
-      <div className="container">
+    <main className="margin-top-bottom flex-shrink-0">
         <Outlet />
-      </div>
     </main>
 
     )

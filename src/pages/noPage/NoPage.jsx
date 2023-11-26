@@ -2,7 +2,9 @@ import "./noPage.css"
 
 const NoPage = () => {
   return (
-    <div>NoPage</div>
+    <div className="container">
+      <div>NoPage</div>
+    </div>
   )
 }
 

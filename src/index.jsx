@@ -7,6 +7,7 @@ import Home from "./pages/home/Home";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
 import Favorites from "./pages/favorites/Favorites";
+import UserDetails from "./pages/userDetails/UserDetails";
 import NoPage from "./pages/noPage/NoPage";
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="about" element={<About />} />
             <Route path="favorites" element={<Favorites />} />
+            <Route path="record/:id" element={<UserDetails />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
