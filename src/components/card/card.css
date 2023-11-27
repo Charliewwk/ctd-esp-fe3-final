@@ -3,5 +3,14 @@
 }
 
 .card-title{
-  background: rgba(255,255,255,0.4)
+  background: rgba(255,255,255,0.4);
+}
+
+.favorite {
+  color: #ffdede;
+  cursor: pointer;
+}
+
+.emailDecoration{
+  text-decoration: none;
 }
