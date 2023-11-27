@@ -1,7 +1,5 @@
-// GlobalContext.jsx
 import { createContext, useReducer, useContext, useEffect } from "react";
 
-// Acciones
 const themeActions = {
   TOGGLE_THEME: "TOGGLE_THEME",
 };
@@ -11,7 +9,6 @@ const favoriteActions = {
   SET_FAVORITES_FROM_LOCAL_STORAGE: "SET_FAVORITES_FROM_LOCAL_STORAGE",
 };
 
-// Reducers
 const themeReducer = (state, action) => {
   switch (action.type) {
     case themeActions.TOGGLE_THEME:
@@ -49,9 +46,8 @@ export const GlobalProvider = ({ children }) => {
   const [favoriteUsers, favoriteDispatch] = useReducer(favoriteReducer, []);
 
   useEffect(() => {
-    // Colorear en rojo los botones de favoritos al cargar el home
     favoriteDispatch({ type: favoriteActions.SET_FAVORITES_FROM_LOCAL_STORAGE });
-  }, []); // Solo se ejecuta al montar el componente
+  }, []);
 
   return (
     <GlobalContext.Provider value={{ theme, themeDispatch, favoriteUsers, favoriteDispatch }}>

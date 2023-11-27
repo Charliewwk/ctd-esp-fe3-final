@@ -9,6 +9,7 @@ const Header = () => {
   const location = useLocation();
 
   return (
+    <>
     <nav className="navbar navbar-expand-md fixed-top navbar-light bg-light">
       <div className="container">
         <Link className="navbar-brand" to="/">Diga Ahhh!</Link>
@@ -36,6 +37,7 @@ const Header = () => {
         </div>
       </div>
     </nav>
+    </>
   );
 };
 
