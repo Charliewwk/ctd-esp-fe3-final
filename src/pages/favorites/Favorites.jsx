@@ -8,7 +8,7 @@ const Favorites = () => {
 
   return (
     <div className="container">
-      <div className="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+      <div className="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4 g-4">
         {favoriteUsers.map((user) => (
           <div key={user.id} className="col">
             <Card user={user} />
@@ -20,3 +20,4 @@ const Favorites = () => {
 };
 
 export default Favorites;
+

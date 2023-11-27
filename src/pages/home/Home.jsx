@@ -26,7 +26,7 @@ const Home = () => {
 
   return (
     <div className={`container ${theme.darkMode ? "dark" : "light"}`}>
-      <div className="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+      <div className="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4 g-4">
         {users.map((user) => (
           <div key={user.id} className="col">
             <Card user={user} />
