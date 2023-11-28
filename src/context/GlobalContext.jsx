@@ -1,4 +1,14 @@
-import { createContext, useReducer, useContext, useEffect } from "react";
+import {
+  createContext,
+  useReducer,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+
+const languageActions = {
+  TOGGLE_LANGUAGE: "TOGGLE_LANGUAGE",
+};
 
 const themeActions = {
   TOGGLE_THEME: "TOGGLE_THEME",
@@ -7,6 +17,16 @@ const themeActions = {
 const favoriteActions = {
   TOGGLE_FAVORITE: "TOGGLE_FAVORITE",
   SET_FAVORITES_FROM_LOCAL_STORAGE: "SET_FAVORITES_FROM_LOCAL_STORAGE",
+};
+
+const languageReducer = (state, action) => {
+  switch (action.type) {
+    case languageActions.TOGGLE_LANGUAGE:
+      localStorage.setItem("language", action.payload);
+      return { language: action.payload };
+    default:
+      return state;
+  }
 };
 
 const themeReducer = (state, action) => {
@@ -45,15 +65,43 @@ const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
   const storedDarkMode = JSON.parse(localStorage.getItem("darkMode")) || false;
-  const [theme, themeDispatch] = useReducer(themeReducer, { darkMode: storedDarkMode });
+  const [theme, themeDispatch] = useReducer(themeReducer, {
+    darkMode: storedDarkMode,
+  });
   const [favoriteUsers, favoriteDispatch] = useReducer(favoriteReducer, []);
+  const storedLanguage = localStorage.getItem("language") || "en";
+  const [language, languageDispatch] = useReducer(languageReducer, {
+    language: storedLanguage,
+  });
+  const [translations, setTranslations] = useState({});
 
   useEffect(() => {
-    favoriteDispatch({ type: favoriteActions.SET_FAVORITES_FROM_LOCAL_STORAGE });
+    favoriteDispatch({
+      type: favoriteActions.SET_FAVORITES_FROM_LOCAL_STORAGE,
+    });
   }, []);
 
+  useEffect(() => {
+    const loadLanguageFile = async () => {
+      const languageFile = await import(`../locales/${language.language}.json`);
+      setTranslations(languageFile);
+    };
+
+    loadLanguageFile();
+  }, [language.language]);
+
   return (
-    <GlobalContext.Provider value={{ theme, themeDispatch, favoriteUsers, favoriteDispatch }}>
+    <GlobalContext.Provider
+      value={{
+        theme,
+        themeDispatch,
+        favoriteUsers,
+        favoriteDispatch,
+        language,
+        languageDispatch,
+        translations,
+      }}
+    >
       {children}
     </GlobalContext.Provider>
   );
@@ -62,7 +110,7 @@ export const GlobalProvider = ({ children }) => {
 export const useGlobal = () => {
   const context = useContext(GlobalContext);
   if (!context) {
-    throw new Error("useGlobal debe ser usado dentro de un GlobalProvider");
+    throw new Error("useGlobal must be used within a GlobalProvider");
   }
   return context;
 };

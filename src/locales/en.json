@@ -1,12 +1,42 @@
 {
-    "english": "English",
-    "spanish": "Spanish",
-    "portuguese": "Portuguese",
-    "poweredBy": "Powered by",
-    "home": "Home",
-    "contact": "Contact",
-    "favorites": "Favorites",
-    "theme": "Theme",
-    "darkTheme": "Dark Theme",
-    "lightTheme": "Light Theme"
+  "english": "English",
+  "spanish": "Spanish",
+  "portuguese": "Portuguese",
+  "poweredBy": "Powered by",
+  "home": "Home",
+  "contact": "Contact",
+  "favorites": "Favorites",
+  "about": "About",
+  "theme": "Theme",
+  "darkTheme": "Dark Theme",
+  "lightTheme": "Light Theme",
+  "userDetails": {
+    "username": "Username",
+    "email": "eMail",
+    "titlePersonalProfesional": "Personal and professional information",
+    "street": "Street",
+    "suite": "Suite",
+    "city": "City",
+    "zip": "Zip Code",
+    "phone": "Phone",
+    "website": "Website",
+    "company": "Company",
+    "navBack": "Back",
+    "navHome": "Home",
+    "navForw": "Forward"
+  },
+  "contactPage": {
+    "verifyMessage": "Please verify your information again.",
+    "successMessage": "Thanks ${formData.fullName}, we will contact you soon via email.",
+    "fullname": "Nombre completo",
+    "fullnameHelp": "Enter more than 5 characters, with no leading spaces or more than one space between words.",
+    "email": "eMail",
+    "emailHelp": "Enter a valid email",
+    "sendButton": "Send"
+  },
+  "aboutPage": {
+    "title": "About",
+    "subtitle": "All about Us",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+  }
 }

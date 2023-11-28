@@ -1,14 +1,12 @@
 import { Outlet } from "react-router-dom";
-import "./main.css"
+import "./main.css";
 
 const Main = () => {
   return (
-
     <main className="margin-top-bottom">
-        <Outlet />
+      <Outlet />
     </main>
+  );
+};
 
-    )
-}
-
-export default Main
+export default Main;

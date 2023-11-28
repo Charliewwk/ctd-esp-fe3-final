@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import "./contact.css"
+import { useGlobal } from "../../context/GlobalContext";
+import "./contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
   });
-
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const { translations } = useGlobal();
 
   const handleInputChange = (e) => {
     setFormData({
@@ -25,7 +26,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     const nameRegex = /^[^\s]+(\s[^\s]+)*$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -34,15 +35,14 @@ const Contact = () => {
       formData.fullName.length <= 5 ||
       !emailRegex.test(formData.email)
     ) {
-      setError(
-        "Please verify your information again."
-      );
+      setError(translations.contactPage.verifyMessage);
       setSuccessMessage("");
     } else {
-      console.log("Data sent:", formData);
-
       setSuccessMessage(
-        `Thanks ${formData.fullName}, we will contact you soon via email.`
+        translations.contactPage.successMessage.replace(
+          "${formData.fullName}",
+          formData.fullName
+        )
       );
       setError("");
     }
@@ -51,17 +51,12 @@ const Contact = () => {
   return (
     <div className="container d-flex justify-content-center">
       <div className="card card-limit">
-        <div className="card-header">Contact</div>
+        <div className="card-header">{translations.contact}</div>
         <div className="card-body card-body d-flex flex-column align-items-center">
-          <h5 className="card-title">Loren</h5>
-          <p className="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            posuere erat a ante.
-          </p>
           <form onSubmit={handleSubmit} className="w-100">
             <div className="mb-3">
               <label className="form-label" htmlFor="fullName">
-                Name:
+                {translations.contactPage.fullname}
               </label>
               <input
                 type="text"
@@ -74,13 +69,12 @@ const Contact = () => {
                 aria-describedby="nameHelpBlock"
               />
               <small id="nameHelpBlock" className="form-text text-muted">
-                Enter more than 5 characters, with no leading spaces or more
-                than one space between words.
-                </small>
+                {translations.contactPage.fullnameHelp}
+              </small>
             </div>
             <div className="mb-3">
               <label className="form-label" htmlFor="email">
-                Email:
+                {translations.contactPage.email}
               </label>
               <input
                 type="text"
@@ -93,15 +87,13 @@ const Contact = () => {
                 aria-describedby="emailHelpBlock"
               />
               <small id="emailHelpBlock" className="form-text text-muted">
-                Enter a valid email
-                </small>
+                {translations.contactPage.emailHelp}
+              </small>
             </div>
             {error && <p className="text-danger">{error}</p>}
-            {successMessage && (
-              <p className="text-success">{successMessage}</p>
-            )}
+            {successMessage && <p className="text-success">{successMessage}</p>}
             <button type="submit" className="btn btn-primary">
-              Enviar
+              {translations.contactPage.sendButton}
             </button>
           </form>
         </div>

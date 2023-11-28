@@ -21,17 +21,28 @@ const Card = ({ user }) => {
   return (
     <div className="card mb-3 position-relative shadow">
       <img
-        className={`card-img-top rounded img-thumbnail ${theme.darkMode ? 'low-brightness' : 'high-brightness'}`}
+        className={`card-img-top rounded img-thumbnail ${
+          theme.darkMode ? "low-brightness" : "high-brightness"
+        }`}
         src="/src/assets/doctor.jpg"
-        alt="">
-      </img>
+        alt=""
+      ></img>
       <div className="fullNameStyle position-absolute top-1 end-0 p-0">
-        <h6 className={`fullName ${theme.darkMode ? 'text-white text-shadow-dark' : 'text-muted text-shadow-light'}`}>
+        <h6
+          className={`fullName ${
+            theme.darkMode
+              ? "text-white text-shadow-dark"
+              : "text-muted text-shadow-light"
+          }`}
+        >
           {user.name.length > 21 ? `${user.name.slice(0, 21)}...` : user.name}
         </h6>
       </div>
       <div className="stage position-absolute">
-        <div className={`heart ${isFavorite ? 'is-active' : ''}`} onClick={handleToggleFavorite}></div>
+        <div
+          className={`heart ${isFavorite ? "is-active" : ""}`}
+          onClick={handleToggleFavorite}
+        ></div>
       </div>
       <div className="card-body">
         <div className="card-text d-flex justify-content-between align-items-center">
@@ -50,7 +61,6 @@ const Card = ({ user }) => {
           <Link to={`/record/${user.id}`}>
             <span className="emailDecoration text-body">{user.email}</span>
           </Link>
-
         </div>
       </div>
     </div>

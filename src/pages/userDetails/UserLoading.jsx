@@ -1,9 +1,8 @@
 import React from "react";
 
 const UserLoading = () => (
-  
   <div className="container text-center">
-    <h2>Loading...</h2>
+    <h4>Loading...</h4>
   </div>
 );
 

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../../components/card/Card";
-import "./home.css"
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -9,7 +8,9 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://jsonplaceholder.typicode.com/users");
+        const response = await axios.get(
+          "https://jsonplaceholder.typicode.com/users"
+        );
         setUsers(response.data);
         localStorage.setItem("users", JSON.stringify(response.data));
       } catch (error) {
@@ -30,7 +31,7 @@ const Home = () => {
         ))}
       </div>
     </div>
-    );
+  );
 };
 
 export default Home;

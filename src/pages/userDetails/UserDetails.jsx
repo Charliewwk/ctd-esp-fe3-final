@@ -19,7 +19,9 @@ const UserDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
+        const response = await axios.get(
+          `https://jsonplaceholder.typicode.com/users/${id}`
+        );
         setUser(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -59,7 +61,15 @@ const UserDetails = () => {
     return <UserNotFound id={id} />;
   }
 
-  return <UserDetailsDisplay user={user} isFirstRecord={isFirstRecord} isLastRecord={isLastRecord} handlePrev={handlePrev} handleNext={handleNext} />;
+  return (
+    <UserDetailsDisplay
+      user={user}
+      isFirstRecord={isFirstRecord}
+      isLastRecord={isLastRecord}
+      handlePrev={handlePrev}
+      handleNext={handleNext}
+    />
+  );
 };
 
 export default UserDetails;

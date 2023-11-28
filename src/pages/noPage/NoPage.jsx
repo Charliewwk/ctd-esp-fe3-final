@@ -1,11 +1,9 @@
-import "./noPage.css"
-
 const NoPage = () => {
   return (
     <div className="container">
-      <div>404 NoPage</div>
+      <div>404 Error...</div>
     </div>
-  )
-}
+  );
+};
 
-export default NoPage
+export default NoPage;
