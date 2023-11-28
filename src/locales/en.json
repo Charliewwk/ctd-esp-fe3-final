@@ -28,7 +28,7 @@
   "contactPage": {
     "verifyMessage": "Please verify your information again.",
     "successMessage": "Thanks ${formData.fullName}, we will contact you soon via email.",
-    "fullname": "Nombre completo",
+    "fullname": "Full Name",
     "fullnameHelp": "Enter more than 5 characters, with no leading spaces or more than one space between words.",
     "email": "eMail",
     "emailHelp": "Enter a valid email",
