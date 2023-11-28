@@ -1,37 +1,33 @@
 # FronEnd III
-
 ## Christian E. Fernández
-
 ## chr.edg.fer@hotmail.com
 
-### home
+### Home
+![Alt text](doc/homeLight.PNG)
+![Alt text](doc/homeDark.PNG)
+![Alt text](doc/homeLightPortugues.PNG)
+![Alt text](doc/homeLightIngles.PNG)
 
-![Alt text](doc/home_dark.png)
-![Alt text](doc/home_light.png)
+### Language Selector
+![Alt text](doc/languageSelector.PNG)
 
 ### Details
-
-![Alt text](doc/details_dark.png)
-![Alt text](doc/details_light.png)
+![Alt text](doc/userDetails.PNG)
+![Alt text](doc/userDetailsNavigation.PNG)
 
 ### Contact
-
-![Alt text](doc/form_email_error.png)
-![Alt text](doc/form_name_error.png)
-![Alt text](doc/form_ok_console_log.png)
-![Alt text](doc/form_ok_light.png)
-![Alt text](doc/form_ok.png)
+![Alt text](doc/contact.PNG)
+![Alt text](doc/formError.PNG)
+![Alt text](doc/formSuccess.PNG)
 
 ### Favorite
-
-![Alt text](doc/favorites_dark.png)
-![Alt text](doc/favorites_light.png)
+![Alt text](doc/favorites.PNG)
 
 ### About
+![Alt text](doc/about.PNG)
 
-![Alt text](doc/about_dark.png)
-![Alt text](doc/about_light.png)
+### History navigation
+![Alt text](doc/historyNavigation.PNG)
 
-### Navigation
-
-![Alt text](doc/navigation.png)
+### 404
+![Alt text](doc/404.PNG)
