@@ -22,11 +22,15 @@ const Header = () => {
               <Link className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} to="/">Home</Link>
             </li>
             <li className="nav-item">
+              <Link className={`nav-link ${location.pathname === '/favorites' ? 'active' : ''}`} to="/favorites">Favorites</Link>
+            </li>
+            <li className="nav-item">
               <Link className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`} to="/contact">Contact</Link>
             </li>
             <li className="nav-item">
-              <Link className={`nav-link ${location.pathname === '/favorites' ? 'active' : ''}`} to="/favorites">Favorites</Link>
+              <Link className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} to="/about">About</Link>
             </li>
+
           </ul>
           <ul className="theme-icon navbar-nav mb-2 mb-md-0 m-2">
             <li className="nav-item">

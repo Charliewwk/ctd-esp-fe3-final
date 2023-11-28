@@ -3,22 +3,27 @@
 ## chr.edg.fer@hotmail.com
 
 ### home
+![Alt text](doc/home_dark.png)
 ![Alt text](doc/home_light.png)
-![Alt text](doc/home.png)
 
 ### Details
-![Alt text](doc/user_details_light.png)
-![Alt text](doc/user_details.png)
+![Alt text](doc/details_dark.png)
+![Alt text](doc/details_light.png)
 
 ### Contact
-![Alt text](doc/contact_correo_no_verificado.png)
-![Alt text](doc/contact_formulario_verificado.png)
-![Alt text](doc/contact_nombre_no_verificado.png)
-![Alt text](doc/contacto_formulario_light.png)
+![Alt text](doc/form_email_error.png)
+![Alt text](doc/form_name_error.png)
+![Alt text](doc/form_ok_console_log.png)
+![Alt text](doc/form_ok_light.png)
+![Alt text](doc/form_ok.png)
 
 ### Favorite
-![Alt text](doc/favorite_animation.png)
-![Alt text](doc/favorite_clic.png)
+![Alt text](doc/favorites_dark.png)
+![Alt text](doc/favorites_light.png)
+
+### About
+![Alt text](doc/about_dark.png)
+![Alt text](doc/about_light.png)
 
 ### Navigation
-![Alt text](doc/navigation.png)
+
