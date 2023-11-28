@@ -1,9 +1,17 @@
 .social-icon {
     margin-left: 5px;
-    width: 16px;
-    height: 16px;
+    width: 1.2rem;
+}
+
+.nav-icon {
+    margin-left: 5px;
+    width: 1.2rem;
 }
 
 .navFooter{
     font-size: small;
 }
+
+.invert-color {
+    filter: invert(1);
+  }

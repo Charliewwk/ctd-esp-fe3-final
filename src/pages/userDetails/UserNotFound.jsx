@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const UserNotFound = ({ id }) => (
-  <div className="container mt-5">
+  
+  <div className="container">
     <h2 className="mb-4">Detalles del Usuario</h2>
     <div className="card">
       <div className="card-body">

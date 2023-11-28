@@ -9,10 +9,13 @@ import About from "./pages/about/About";
 import Favorites from "./pages/favorites/Favorites";
 import UserDetails from "./pages/userDetails/UserDetails";
 import NoPage from "./pages/noPage/NoPage";
+
 import "./index.css";
 
 export default function App() {
+
   return (
+
     <GlobalProvider>
       <BrowserRouter>
         <Routes>

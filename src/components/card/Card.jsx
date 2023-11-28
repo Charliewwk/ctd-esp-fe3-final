@@ -1,4 +1,3 @@
-// Card.jsx
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useGlobal } from "../../context/GlobalContext";
@@ -7,6 +6,7 @@ import "./card.css";
 const Card = ({ user }) => {
   const { favoriteUsers, favoriteDispatch } = useGlobal();
   const [isFavorite, setIsFavorite] = useState(false);
+  const { theme } = useGlobal();
 
   useEffect(() => {
     setIsFavorite(
@@ -19,14 +19,16 @@ const Card = ({ user }) => {
   };
 
   return (
-    <div className="card bg-light mb-3 position-relative shadow">
+    <div className="card mb-3 position-relative shadow">
       <img
-        className="card-img-top rounded img-thumbnail"
-        src="../../../src/assets/doctor.jpg"
+        className={`card-img-top rounded img-thumbnail ${theme.darkMode ? 'low-brightness' : 'high-brightness'}`}
+        src="/src/assets/doctor.jpg"
         alt="">
       </img>
-      <div className="fullNameStyle position-absolute top-1 end-0 p-0 shadow">
-        <h6 className="fullName mb-0">{user.name}</h6>
+      <div className="fullNameStyle position-absolute top-1 end-0 p-0">
+        <h6 className={`fullName ${theme.darkMode ? 'text-white text-shadow-dark' : 'text-muted text-shadow-light'}`}>
+          {user.name.length > 21 ? `${user.name.slice(0, 21)}...` : user.name}
+        </h6>
       </div>
       <div className="stage position-absolute">
         <div className={`heart ${isFavorite ? 'is-active' : ''}`} onClick={handleToggleFavorite}></div>

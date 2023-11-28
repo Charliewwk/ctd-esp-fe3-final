@@ -4,7 +4,7 @@ import "./main.css"
 const Main = () => {
   return (
 
-    <main className="margin-top-bottom flex-shrink-0">
+    <main className="margin-top-bottom">
         <Outlet />
     </main>
 

@@ -1,14 +1,13 @@
-// Favorites.jsx
 import React from "react";
 import { useGlobal } from "../../context/GlobalContext";
 import Card from "../../components/card/Card";
 
 const Favorites = () => {
-  const { favoriteUsers } = useGlobal(); // Actualiza para usar el nuevo contexto
+  const { favoriteUsers } = useGlobal();
 
   return (
     <div className="container">
-      <div className="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4 g-4">
+      <div className="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4">
         {favoriteUsers.map((user) => (
           <div key={user.id} className="col">
             <Card user={user} />

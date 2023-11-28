@@ -4,11 +4,12 @@ import Footer from "../../components/footer/Footer"
 import "./layout.css"
 
 const Layout = () => {
+
   return (
     <>
-      <Header />
-      <Main />
-      <Footer />
+        <Header />
+        <Main />
+        <Footer />
     </>
   )
 };

@@ -12,7 +12,9 @@ const favoriteActions = {
 const themeReducer = (state, action) => {
   switch (action.type) {
     case themeActions.TOGGLE_THEME:
-      return { ...state, darkMode: !state.darkMode };
+      const newDarkMode = !state.darkMode;
+      localStorage.setItem("darkMode", JSON.stringify(newDarkMode));
+      return { darkMode: newDarkMode };
     default:
       return state;
   }
@@ -42,7 +44,8 @@ const favoriteReducer = (state, action) => {
 const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
-  const [theme, themeDispatch] = useReducer(themeReducer, { darkMode: false });
+  const storedDarkMode = JSON.parse(localStorage.getItem("darkMode")) || false;
+  const [theme, themeDispatch] = useReducer(themeReducer, { darkMode: storedDarkMode });
   const [favoriteUsers, favoriteDispatch] = useReducer(favoriteReducer, []);
 
   useEffect(() => {

@@ -2,22 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const UserDetailsDisplay = ({ user, isFirstRecord, isLastRecord, handlePrev, handleNext }) => {
-  // Armar la constante userData con title y content
-  const userData = [
-    { title: 'Username', content: user.username },
-    { title: 'eMail', content: user.email },
-    { title: 'Address', content: [
-      { title: 'Street', content: user.address.street },
-      { title: 'Suite', content: user.address.suite },
-      { title: 'City', content: user.address.city },
-      { title: 'PD', content: user.address.zipcode }
-    ]},
-    { title: 'eMail', content: user.email },
-    { title: 'eMail', content: user.email },
-    { title: 'eMail', content: user.email },
-    { title: 'eMail', content: user.email },
-
-  ];
 
   return (
     <div className="container">
@@ -102,9 +86,9 @@ const UserDetailsDisplay = ({ user, isFirstRecord, isLastRecord, handlePrev, han
         </div>
         <div className="card-footer">
           <div className="d-flex justify-content-between align-items-center">
-            <button className="btn btn-sm btn-secondary" onClick={handlePrev} disabled={isFirstRecord}>Back</button>
+            <button className="btn btn-sm btn-success" onClick={handlePrev} disabled={isFirstRecord}>Back</button>
             <Link to={`/`} className="btn btn-sm btn-primary">Home</Link>
-            <button className="btn btn-sm btn-secondary" onClick={handleNext} disabled={isLastRecord}>Forward</button>
+            <button className="btn btn-sm btn-success" onClick={handleNext} disabled={isLastRecord}>Forward</button>
           </div>
         </div>
       </div>
