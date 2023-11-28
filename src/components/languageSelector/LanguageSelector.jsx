@@ -7,7 +7,7 @@ const LanguageSelector = ({ handleLanguageChange }) => {
   const languages = [
     { code: "en", label: "English" },
     { code: "es", label: "Spanish" },
-    { code: "pt", label: "Portuguese" },
+    { code: "pt", label: "Português" },
   ];
 
   return (
