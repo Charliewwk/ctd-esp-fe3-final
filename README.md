@@ -20,7 +20,7 @@
 ![Alt text](doc/formError.PNG)
 ![Alt text](doc/formSuccess.PNG)
 
-### Favorite
+### Favorites
 ![Alt text](doc/favorites.PNG)
 
 ### About
