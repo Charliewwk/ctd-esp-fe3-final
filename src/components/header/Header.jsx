@@ -9,7 +9,6 @@ const Header = () => {
   const { theme, language, languageDispatch, translations } = useGlobal();
 
   const handleLanguageChange = (selectedLanguage) => {
-    console.log("Idioma seleccionado: ", selectedLanguage);
     languageDispatch({ type: "TOGGLE_LANGUAGE", payload: selectedLanguage });
   };
 
