@@ -26,4 +26,4 @@
 ![Alt text](doc/about_light.png)
 
 ### Navigation
-
+![Alt text](doc/navigation.png)
