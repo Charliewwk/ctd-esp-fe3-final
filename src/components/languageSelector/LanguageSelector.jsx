@@ -1,12 +1,13 @@
 import React from "react";
 import { useGlobal } from "../../context/GlobalContext";
+import "./languageSelector.css"
 
 const LanguageSelector = () => {
   const { theme, language, languageDispatch } = useGlobal();
 
   const languages = [
     { code: "en", label: "English" },
-    { code: "es", label: "Spanish" },
+    { code: "es", label: "Español" },
     { code: "pt", label: "Português" },
   ];
 
@@ -29,7 +30,7 @@ const LanguageSelector = () => {
         aria-expanded="false"
       >
         <img
-          className={`${theme.darkMode ? "invert-color" : ""}`}
+          className="icon-flag"
           src="/src/assets/globe.svg"
           alt="Language"
         />
@@ -42,6 +43,12 @@ const LanguageSelector = () => {
               href="#"
               onClick={() => handleLanguageChange(lang.code)}
             >
+              <img
+                // className={`icon-flags ${lang.code === language.language ? 'disabled' : ''}`}
+                className="icon-flags"
+                src={`src/assets/${lang.code}.svg`}
+                alt={lang.label}
+              />
               {lang.label}
             </a>
           </li>

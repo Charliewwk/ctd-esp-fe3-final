@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useGlobal } from "../../context/GlobalContext";
 import ThemeSwitch from "../themeSwitch/ThemeSwitch";
@@ -7,21 +7,10 @@ import LanguageSelector from "../languageSelector/LanguageSelector";
 const Header = () => {
   const location = useLocation();
   const { theme, language, languageDispatch, translations } = useGlobal();
-  const navbarCollapseRef = useRef(null);
 
   const handleLanguageChange = (selectedLanguage) => {
     languageDispatch({ type: "TOGGLE_LANGUAGE", payload: selectedLanguage });
   };
-
-  const closeNavbar = () => {
-    if (navbarCollapseRef.current) {
-      navbarCollapseRef.current.classList.remove("show");
-    }
-  };
-
-  useEffect(() => {
-    closeNavbar();
-  }, [language.language, theme.darkMode]);
 
   return (
     <nav
@@ -45,7 +34,6 @@ const Header = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
-          ref={navbarCollapseRef}
           className="collapse navbar-collapse show"
           id="navbarCollapse"
         >
@@ -56,7 +44,6 @@ const Header = () => {
                   location.pathname === "/" ? "active" : ""
                 }`}
                 to="/"
-                onClick={closeNavbar}
               >
                 {translations.home}
               </Link>
@@ -67,7 +54,6 @@ const Header = () => {
                   location.pathname === "/favorites" ? "active" : ""
                 }`}
                 to="/favorites"
-                onClick={closeNavbar}
               >
                 {translations.favorites}
               </Link>
@@ -78,7 +64,6 @@ const Header = () => {
                   location.pathname === "/contact" ? "active" : ""
                 }`}
                 to="/contact"
-                onClick={closeNavbar}
               >
                 {translations.contact}
               </Link>
@@ -89,7 +74,6 @@ const Header = () => {
                   location.pathname === "/about" ? "active" : ""
                 }`}
                 to="/about"
-                onClick={closeNavbar}
               >
                 {translations.about}
               </Link>

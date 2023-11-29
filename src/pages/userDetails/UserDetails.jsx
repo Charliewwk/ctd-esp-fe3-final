@@ -11,12 +11,17 @@ const getTotalRecords = () => {
 };
 
 const UserDetails = () => {
+  const [isFirstRecord, setIsFirstRecord] = useState(false);
+  const [isLastRecord, setIsLastRecord] = useState(false);
   const { id } = useParams();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
+    setIsFirstRecord(false);
+    setIsLastRecord(false);
+
     const fetchData = async () => {
       try {
         const response = await axios.get(
@@ -34,10 +39,15 @@ const UserDetails = () => {
     fetchData();
   }, [id]);
 
+  useEffect(() => {
+    console.log('Registro ID: ', id);
+    setIsFirstRecord(parseInt(id, 10) === 1);
+    setIsLastRecord(parseInt(id, 10) === getTotalRecords());
+  }, [id, getTotalRecords]);
+
   const handleNext = () => {
     const nextId = parseInt(id, 10) + 1;
     const totalRecords = getTotalRecords();
-
     if (nextId <= totalRecords) {
       navigate(`/record/${nextId}`);
     }
@@ -50,16 +60,15 @@ const UserDetails = () => {
     }
   };
 
-  const isFirstRecord = parseInt(id, 10) === 1;
-  const isLastRecord = parseInt(id, 10) === getTotalRecords();
-
   if (loading) {
     return <UserLoading />;
   }
 
   if (!user) {
+    console.log (`Usuario no encontrado ID: `, id);
     return <UserNotFound id={id} />;
   }
+
 
   return (
     <UserDetailsDisplay

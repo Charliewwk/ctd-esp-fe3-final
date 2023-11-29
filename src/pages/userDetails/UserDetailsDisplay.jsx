@@ -36,7 +36,7 @@ const UserDetailsDisplay = ({
           </div>
           <div className="col-2">
             <img
-              src="../../../src/assets/doctor.jpg"
+              src="/src/assets/doctor.jpg"
               className="img-thumbnail"
               alt="..."
             />
