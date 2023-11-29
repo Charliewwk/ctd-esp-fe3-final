@@ -16,6 +16,7 @@ const Card = ({ user }) => {
 
   const handleToggleFavorite = () => {
     favoriteDispatch({ type: "TOGGLE_FAVORITE", payload: user });
+    console.log (`Usuario id: `, user.id, ` ahora es `, isFavorite ? "No favorito" : "Favorito")
   };
 
   return (
@@ -44,6 +45,7 @@ const Card = ({ user }) => {
           onClick={handleToggleFavorite}
         ></div>
       </div>
+
       <div className="card-body">
         <div className="card-text d-flex justify-content-between align-items-center">
           <Link to={`/record/${user.id}`}>
