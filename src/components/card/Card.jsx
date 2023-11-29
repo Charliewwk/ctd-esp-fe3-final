@@ -7,6 +7,7 @@ const Card = ({ user }) => {
   const { favoriteUsers, favoriteDispatch } = useGlobal();
   const [isFavorite, setIsFavorite] = useState(false);
   const { theme } = useGlobal();
+  const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
     setIsFavorite(
@@ -17,6 +18,13 @@ const Card = ({ user }) => {
   const handleToggleFavorite = () => {
     favoriteDispatch({ type: "TOGGLE_FAVORITE", payload: user });
     console.log (`Usuario id: `, user.id, ` ahora es `, isFavorite ? "No favorito" : "Favorito")
+    setShowToast(true);
+
+    // Ocultar el toast después de un tiempo (por ejemplo, 2 segundos)
+    setTimeout(() => {
+      setShowToast(false);
+      console.log ('Dentro');
+    }, 2000);
   };
 
   return (
@@ -44,6 +52,27 @@ const Card = ({ user }) => {
           className={`heart ${isFavorite ? "is-active" : ""}`}
           onClick={handleToggleFavorite}
         ></div>
+      </div>
+
+      {/* Toast */}
+      <div
+        id="favorite-toast"
+        // className={`toast ${theme.darkMode ? 'bg-dark' : 'bg-light'}`}
+        className="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-bs-delay="2000"
+        style={{
+          position: 'absolute',
+          top: '0',
+          right: '0',
+        }}
+        hidden={!showToast}
+      >
+        <div className="toast-body">
+          {isFavorite ? 'Añadido a favoritos' : 'Eliminado de favoritos'}
+        </div>
       </div>
 
       <div className="card-body">
