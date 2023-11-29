@@ -1,14 +1,25 @@
 import React from "react";
 import { useGlobal } from "../../context/GlobalContext";
 
-const LanguageSelector = ({ handleLanguageChange }) => {
-  const { theme } = useGlobal();
+const LanguageSelector = () => {
+  const { theme, language, languageDispatch } = useGlobal();
 
   const languages = [
     { code: "en", label: "English" },
     { code: "es", label: "Spanish" },
     { code: "pt", label: "Português" },
   ];
+
+  const handleLanguageChange = (selectedLanguage) => {
+    if (language.language !== selectedLanguage) {
+      console.log('Lenguaje anterior: ', language.language);
+      console.log('Lenguaje actual: ', selectedLanguage)
+      languageDispatch({
+        type: "TOGGLE_LANGUAGE",
+        payload: selectedLanguage,
+      });
+    }
+  };
 
   return (
     <div className="dropstart">
@@ -27,7 +38,7 @@ const LanguageSelector = ({ handleLanguageChange }) => {
         {languages.map((lang) => (
           <li key={lang.code}>
             <a
-              className="dropdown-item"
+              className={`dropdown-item ${lang.code === language.language ? 'disabled' : ''}`}
               href="#"
               onClick={() => handleLanguageChange(lang.code)}
             >

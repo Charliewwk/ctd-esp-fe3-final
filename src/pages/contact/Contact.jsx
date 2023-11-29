@@ -44,6 +44,10 @@ const Contact = () => {
           formData.fullName
         )
       );
+      console.log('Formulario enviado exitosamente!: ', translations.contactPage.successMessage.replace(
+        "${formData.fullName}",
+        formData.fullName
+      ))
       setError("");
     }
   };
