@@ -30,7 +30,7 @@ const LanguageSelector = () => {
         aria-expanded="false"
       >
         <img
-          className="icon-flag"
+          className={`icon-globe ${theme.darkMode ? "invert-color" : ""}`}
           src="/src/assets/globe.svg"
           alt="Language"
         />
@@ -44,7 +44,6 @@ const LanguageSelector = () => {
               onClick={() => handleLanguageChange(lang.code)}
             >
               <img
-                // className={`icon-flags ${lang.code === language.language ? 'disabled' : ''}`}
                 className="icon-flags"
                 src={`src/assets/${lang.code}.svg`}
                 alt={lang.label}

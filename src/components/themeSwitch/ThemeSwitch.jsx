@@ -1,5 +1,6 @@
 import React from "react";
 import { useGlobal } from "../../context/GlobalContext";
+import "./themeSwitch.css"
 
 const ThemeSwitch = () => {
   const { theme, themeDispatch } = useGlobal();
@@ -17,7 +18,7 @@ const ThemeSwitch = () => {
 
   return (
     <img
-      className="theme-icon"
+      className="icon-theme"
       onClick={toggleTheme}
       src={theme.darkMode ? "/src/assets/moon.svg" : "/src/assets/sun.svg"}
       alt="Theme"

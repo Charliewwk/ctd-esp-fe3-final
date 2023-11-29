@@ -20,7 +20,7 @@ const Card = ({ user }) => {
     console.log (`Usuario id: `, user.id, ` ahora es `, isFavorite ? "No favorito" : "Favorito")
     setShowToast(true);
 
-    // Ocultar el toast después de un tiempo (por ejemplo, 2 segundos)
+    // Volviendome loco por el toast! //////////////////////////////////////////////////////////
     setTimeout(() => {
       setShowToast(false);
       console.log ('Dentro');
@@ -54,7 +54,7 @@ const Card = ({ user }) => {
         ></div>
       </div>
 
-      {/* Toast */}
+      {/* Te voy a sacar andando ! ////////////////////////////////// */}
       <div
         id="favorite-toast"
         // className={`toast ${theme.darkMode ? 'bg-dark' : 'bg-light'}`}

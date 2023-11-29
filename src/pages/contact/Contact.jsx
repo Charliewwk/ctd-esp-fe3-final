@@ -36,7 +36,10 @@ const Contact = () => {
       !emailRegex.test(formData.email)
     ) {
       setError(translations.contactPage.verifyMessage);
-      console.log('Error en los datos cargados!: ', error);
+      console.log(
+        "Error en los datos cargados!: ",
+        translations.contactPage.verifyMessage
+      );
       setSuccessMessage("");
     } else {
       setSuccessMessage(
@@ -45,7 +48,13 @@ const Contact = () => {
           formData.fullName
         )
       );
-      console.log('Formulario enviado exitosamente!: ', successMessage);
+      console.log(
+        "Formulario enviado exitosamente!: ",
+        translations.contactPage.successMessage.replace(
+          "${formData.fullName}",
+          formData.fullName
+        )
+      );
       setError("");
     }
   };
