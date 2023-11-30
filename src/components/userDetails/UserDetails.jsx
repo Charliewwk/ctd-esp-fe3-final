@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
-import UserLoading from "./UserLoading";
-import UserNotFound from "./UserNotFound";
-import UserDetailsDisplay from "./UserDetailsDisplay";
+import UserLoading from "../loading/loading";
+import UserNotFound from "../userNotFound/UserNotFound";
+import UserDetailsDisplay from "../../pages/userDetails/UserDetailsDisplay";
 
 const getTotalRecords = () => {
   const users = JSON.parse(localStorage.getItem("users"));
@@ -40,7 +40,7 @@ const UserDetails = () => {
   }, [id]);
 
   useEffect(() => {
-    console.log('Registro ID: ', id);
+    console.log('Record ID: ', id);
     setIsFirstRecord(parseInt(id, 10) === 1);
     setIsLastRecord(parseInt(id, 10) === getTotalRecords());
   }, [id, getTotalRecords]);
@@ -65,7 +65,7 @@ const UserDetails = () => {
   }
 
   if (!user) {
-    console.log (`Usuario no encontrado ID: `, id);
+    console.log (`User ID `, id, ` not found: `);
     return <UserNotFound id={id} />;
   }
 

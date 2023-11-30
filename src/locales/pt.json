@@ -38,5 +38,10 @@
     "title": "Nós",
     "subtitle": "Nós Nós Nós Nós....",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+  },
+  "notFound": {
+    "title": "Aviso",
+    "text": "O usuário com ID ${id} não existe.",
+    "button": "Voltar"
   }
 }

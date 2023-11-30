@@ -7,7 +7,7 @@ import Home from "./pages/home/Home";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
 import Favorites from "./pages/favorites/Favorites";
-import UserDetails from "./pages/userDetails/UserDetails";
+import UserDetails from "./components/userDetails/UserDetails";
 import NoPage from "./pages/noPage/NoPage";
 import "./index.css";
 

@@ -38,5 +38,10 @@
     "title": "Nosotros",
     "subtitle": "Todo sobre nosotros",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+  },
+  "notFound": {
+    "title": "Advertencia",
+    "text": "El usuario con ID ${id} no existe.",
+    "button": "Volver"
   }
 }

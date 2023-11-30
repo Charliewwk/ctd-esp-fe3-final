@@ -38,5 +38,10 @@
     "title": "About",
     "subtitle": "All about Us",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+  },
+  "notFound": {
+    "title": "Warning",
+    "text": "The user with ID ${id} does not exist.",
+    "button": "Back"
   }
 }

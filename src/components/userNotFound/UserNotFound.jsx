@@ -1,18 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const UserNotFound = ({ id }) => (
+const UserNotFound = ({ id, translations }) => (
+
   <div className="container">
-    <h2 className="mb-4">Detalles del Usuario</h2>
+    <h2 className="mb-4">{translations.notFound.title}</h2>
     <div className="card">
       <div className="card-body">
-        <p className="card-text">El usuario con el ID {id} no existe.</p>
+        <p className="card-text">{translations.notFound.text}</p>
         <Link to={`/`} className="btn btn-primary mt-3">
-          Volver a la lista
+        {translations.notFound.button}
         </Link>
       </div>
     </div>
   </div>
+
 );
 
 export default UserNotFound;

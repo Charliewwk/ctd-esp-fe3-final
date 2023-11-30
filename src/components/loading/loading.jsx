@@ -1,9 +1,9 @@
 import React from "react";
 
-const UserLoading = () => (
+const Loading = () => (
   <div className="container text-center">
-    <h4>Loading...</h4>
+    <h6>Loading...</h6>
   </div>
 );
 
-export default UserLoading;
+export default Loading;
