@@ -7,7 +7,6 @@ const Card = ({ user }) => {
   const { favoriteUsers, favoriteDispatch } = useGlobal();
   const [isFavorite, setIsFavorite] = useState(false);
   const { theme } = useGlobal();
-  const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
     setIsFavorite(
@@ -18,13 +17,6 @@ const Card = ({ user }) => {
   const handleToggleFavorite = () => {
     favoriteDispatch({ type: "TOGGLE_FAVORITE", payload: user });
     console.log (`Usuario id: `, user.id, ` ahora es `, isFavorite ? "No favorito" : "Favorito")
-    setShowToast(true);
-
-    // Volviendome loco por el toast! //////////////////////////////////////////////////////////
-    setTimeout(() => {
-      setShowToast(false);
-      console.log ('Dentro');
-    }, 2000);
   };
 
   return (
@@ -53,28 +45,6 @@ const Card = ({ user }) => {
           onClick={handleToggleFavorite}
         ></div>
       </div>
-
-      {/* Te voy a sacar andando ! ////////////////////////////////// */}
-      <div
-        id="favorite-toast"
-        // className={`toast ${theme.darkMode ? 'bg-dark' : 'bg-light'}`}
-        className="toast"
-        role="alert"
-        aria-live="assertive"
-        aria-atomic="true"
-        data-bs-delay="2000"
-        style={{
-          position: 'absolute',
-          top: '0',
-          right: '0',
-        }}
-        hidden={!showToast}
-      >
-        <div className="toast-body">
-          {isFavorite ? 'Añadido a favoritos' : 'Eliminado de favoritos'}
-        </div>
-      </div>
-
       <div className="card-body">
         <div className="card-text d-flex justify-content-between align-items-center">
           <Link to={`/record/${user.id}`}>

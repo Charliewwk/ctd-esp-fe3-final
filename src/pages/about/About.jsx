@@ -7,7 +7,7 @@ const About = () => {
     <div className="container d-flex justify-content-center">
       <div className="card card-limit">
         <div className="card-header">{translations.aboutPage.title}</div>
-        <div className="card-body card-body d-flex flex-column align-items-center">
+        <div className="card-body d-flex flex-column ">
           <h5 className="card-title">{translations.aboutPage.subtitle}</h5>
           <p className="card-text">{translations.aboutPage.text}.</p>
         </div>

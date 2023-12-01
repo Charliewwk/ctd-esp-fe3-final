@@ -27,11 +27,13 @@ const UserDetails = () => {
         const response = await axios.get(
           `https://jsonplaceholder.typicode.com/users/${id}`
         );
-        setUser(response.data);
+        setTimeout(() => {
+          setUser(response.data);
+          setLoading(false);
+        }, 500);
       } catch (error) {
         console.error("Error fetching data:", error);
         setUser(null);
-      } finally {
         setLoading(false);
       }
     };
@@ -68,7 +70,6 @@ const UserDetails = () => {
     console.log (`User ID `, id, ` not found: `);
     return <UserNotFound id={id} />;
   }
-
 
   return (
     <UserDetailsDisplay
