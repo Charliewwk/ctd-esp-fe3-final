@@ -1,3 +1,4 @@
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useGlobal } from "../../context/GlobalContext";
 import "./footer.css";
@@ -14,6 +15,16 @@ const Footer = () => {
     navigate(1);
   };
 
+  const footerLink = (icon, altText, onClick = () => {}, to = "#") => (
+    <Link className="nav-item" to={to} onClick={onClick}>
+      <img
+        className={`social-icon ${theme.darkMode ? "invert-color" : ""}`}
+        src={`/src/assets/${icon}`}
+        alt={altText}
+      />
+    </Link>
+  );
+
   return (
     <nav
       className={`navFooter navbar fixed-bottom navbar-expand-md ${
@@ -23,82 +34,25 @@ const Footer = () => {
       <div className="container">
         <div className="nav mb-2 mb-lg-0">
           <div className="nav-item">{translations.poweredBy}</div>
-          <Link className="nav-item" to="#">
-            <img
-              className={`${theme.darkMode ? "invert-color" : ""}`}
-              src="/src/assets/DH.png"
-              alt="DH-logo"
-            />
-          </Link>
+          {footerLink("DH.png", "DH-logo")}
         </div>
         <div className="nav mb-2 mb-lg-0">
-          <Link className="nav-item nav-icon" onClick={goBack}>
-            <img
-              className={`social-icon ${theme.darkMode ? "invert-color" : ""}`}
-              src="/src/assets/arrow-left.svg"
-              alt="Backward"
-            />
-          </Link>
+          {footerLink("arrow-left.svg", "Backward", goBack)}
           <div className="item-separator" />
-          <Link className="nav-item nav-icon" to="/">
-            <img
-              className={`social-icon ${theme.darkMode ? "invert-color" : ""}`}
-              src="/src/assets/house.svg"
-              alt="Home"
-            />
-          </Link>
+          {footerLink("house.svg", "Home", undefined, "/")}
           <div className="item-separator" />
-          <Link className="nav-item nav-icon" onClick={goForward}>
-            <img
-              className={`social-icon ${theme.darkMode ? "invert-color" : ""}`}
-              src="/src/assets/arrow-right.svg"
-              alt="Forward"
-            />
-          </Link>
+          {footerLink("arrow-right.svg", "Forward", goForward)}
         </div>
         <div className="nav mb-2 mb-lg-0">
           <div className="nav-item">Christian Fernández</div>
           <div className="item-separator" />
-          <Link className="nav-item" to="#">
-            <img
-              className={`social-icon ${theme.darkMode ? "invert-color" : ""}`}
-              src="/src/assets/facebook.svg"
-              alt="Facebook"
-            />
-          </Link>
+          {footerLink("facebook.svg", "Facebook", undefined, "https://www.facebook.com")}
           <div className="item-separator" />
-          <Link
-            className={`social-icon ${theme.darkMode ? "invert-color" : ""}`}
-            to="#"
-          >
-            <img
-              className="social-icon"
-              src="/src/assets/instagram.svg"
-              alt="Instagram"
-            />
-          </Link>
+          {footerLink("instagram.svg", "Instagram", undefined, "https://www.instagram.com")}
           <div className="item-separator" />
-          <Link
-            className={`social-icon ${theme.darkMode ? "invert-color" : ""}`}
-            to="#"
-          >
-            <img
-              className="social-icon"
-              src="/src/assets/tiktok.svg"
-              alt="Tiktok"
-            />
-          </Link>
+          {footerLink("tiktok.svg", "Tiktok", undefined, "https://www.tiktok.com")}
           <div className="item-separator" />
-          <Link
-            className={`social-icon ${theme.darkMode ? "invert-color" : ""}`}
-            to="#"
-          >
-            <img
-              className="social-icon"
-              src="/src/assets/whatsapp.svg"
-              alt="Whatsapp"
-            />
-          </Link>
+          {footerLink("whatsapp.svg", "Whatsapp", undefined, "https://www.whatsapp.com")}
         </div>
       </div>
     </nav>

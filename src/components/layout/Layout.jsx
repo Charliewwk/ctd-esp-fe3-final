@@ -1,12 +1,15 @@
+import { Outlet } from "react-router-dom";
 import Header from "../header/Header";
-import Main from "../main/Main";
 import Footer from "../footer/Footer";
+import "./Layout.css"
 
 const Layout = () => {
   return (
     <>
       <Header />
-      <Main />
+      <div className="margin-top-bottom">
+        <Outlet />
+      </div>
       <Footer />
     </>
   );

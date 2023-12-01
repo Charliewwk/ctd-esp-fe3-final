@@ -23,18 +23,6 @@ const Header = () => {
     closeNavbar();
   }, [language.language, theme.darkMode]);
 
-  const navLink = (to, label) => (
-    <li className="nav-item">
-      <Link
-        className={`nav-link ${location.pathname === to ? "active" : ""}`}
-        to={to}
-        onClick={closeNavbar}
-      >
-        {label}
-      </Link>
-    </li>
-  );
-
   return (
     <nav
       className={`navbar fixed-top navbar-expand-md ${
@@ -62,10 +50,50 @@ const Header = () => {
           id="navbarCollapse"
         >
           <ul className="navbar-nav me-auto">
-            {navLink("/", translations.home)}
-            {navLink("/favorites", translations.favorites)}
-            {navLink("/contact", translations.contact)}
-            {navLink("/about", translations.about)}
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${
+                  location.pathname === "/" ? "active" : ""
+                }`}
+                to="/"
+                onClick={closeNavbar}
+              >
+                {translations.home}
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${
+                  location.pathname === "/favorites" ? "active" : ""
+                }`}
+                to="/favorites"
+                onClick={closeNavbar}
+              >
+                {translations.favorites}
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${
+                  location.pathname === "/contact" ? "active" : ""
+                }`}
+                to="/contact"
+                onClick={closeNavbar}
+              >
+                {translations.contact}
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${
+                  location.pathname === "/about" ? "active" : ""
+                }`}
+                to="/about"
+                onClick={closeNavbar}
+              >
+                {translations.about}
+              </Link>
+            </li>
           </ul>
           <ul className="navbar-nav">
             <li className="nav-item">
