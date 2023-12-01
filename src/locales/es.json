@@ -32,7 +32,8 @@
     "fullnameHelp": "Ingresa más de 5 caracteres, sin espacios al principio o más de un espacio entre palabras.",
     "email": "eMail",
     "emailHelp": "Ingresa un correo electrónico válido",
-    "sendButton": "Enviar"
+    "sendButton": "Enviar",
+    "sending": "Enviando..."
   },
   "aboutPage": {
     "title": "Nosotros",
@@ -43,5 +44,6 @@
     "title": "Advertencia",
     "text": "El usuario con ID ${id} no existe.",
     "button": "Volver"
-  }
+  },
+  "loading": "Cargando... (Simulando carga desde API)"
 }

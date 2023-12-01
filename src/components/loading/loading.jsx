@@ -1,9 +1,14 @@
-import React from "react";
+import React from 'react'
+import { useGlobal } from "../../context/GlobalContext";
 
-const Loading = () => (
-  <div className="container text-center">
-    <h6>Loading...</h6>
+const loading = () => {
+  const { translations } = useGlobal();
+
+  return (
+    <div className="container text-center">
+    <h6>{translations.loading}</h6>
   </div>
-);
+  )
+}
 
-export default Loading;
+export default loading

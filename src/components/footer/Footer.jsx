@@ -46,13 +46,13 @@ const Footer = () => {
         <div className="nav mb-2 mb-lg-0">
           <div className="nav-item">Christian Fernández</div>
           <div className="item-separator" />
-          {footerLink("facebook.svg", "Facebook", undefined, "https://www.facebook.com")}
+          {footerLink("facebook.svg", "Facebook", undefined, "#")}
           <div className="item-separator" />
-          {footerLink("instagram.svg", "Instagram", undefined, "https://www.instagram.com")}
+          {footerLink("instagram.svg", "Instagram", undefined, "#")}
           <div className="item-separator" />
-          {footerLink("tiktok.svg", "Tiktok", undefined, "https://www.tiktok.com")}
+          {footerLink("tiktok.svg", "Tiktok", undefined, "#")}
           <div className="item-separator" />
-          {footerLink("whatsapp.svg", "Whatsapp", undefined, "https://www.whatsapp.com")}
+          {footerLink("whatsapp.svg", "Whatsapp", undefined, "#")}
         </div>
       </div>
     </nav>

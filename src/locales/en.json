@@ -32,7 +32,8 @@
     "fullnameHelp": "Enter more than 5 characters, with no leading spaces or more than one space between words.",
     "email": "eMail",
     "emailHelp": "Enter a valid email",
-    "sendButton": "Send"
+    "sendButton": "Send",
+    "sending": "Sending..."
   },
   "aboutPage": {
     "title": "About",
@@ -43,5 +44,6 @@
     "title": "Warning",
     "text": "The user with ID ${id} does not exist.",
     "button": "Back"
-  }
+  },
+  "loading": "Loading... (Simulating loading from API)"
 }

@@ -57,15 +57,7 @@ const Contact = () => {
           formData.fullName
         )
       );
-      setTimeout(() => {
-        setIsSubmitting(false);
-        setFormData({
-          fullName: "",
-          email: "",
-        });
-        setSuccessMessage("");
-        setError("");
-      }, 5000);
+      setError("");
     }
   };
 
@@ -113,8 +105,8 @@ const Contact = () => {
             </div>
             {error && <p className="text-danger">{error}</p>}
             {successMessage && <p className="text-success">{successMessage}</p>}
-            <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
-              {isSubmitting ? translations.contactPage.sending : translations.contactPage.sendButton}
+            <button type="submit" className="btn btn-primary">
+              {translations.contactPage.sendButton}
             </button>
           </form>
         </div>
