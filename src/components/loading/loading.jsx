@@ -6,7 +6,7 @@ const loading = () => {
 
   return (
     <div className="container text-center">
-    <h6>{translations.loading}</h6>
+      <h6>{translations.loading}</h6>
   </div>
   )
 }

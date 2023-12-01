@@ -45,5 +45,6 @@
     "text": "O usuário com ID ${id} não existe.",
     "button": "Voltar"
   },
-  "loading": "Carregando... (Simulando carregamento da API)"
+  "loading": "Carregando... (Simulando carregamento da API)",
+  "nofavs": "Você não tem favoritos em sua lista"
 }
